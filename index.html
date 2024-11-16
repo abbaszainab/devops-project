@@ -118,6 +118,35 @@
 
     <!-- Custom JavaScript -->
     <script src="app.js"></script>
+    <script>
+        // Handling the form submission
+        const weatherForm = document.getElementById("weather-form");
+        const cityInput = document.getElementById("city");
+
+        weatherForm.addEventListener("submit", function (event) {
+            event.preventDefault();
+            const city = cityInput.value;
+
+            // Fetching weather data from the server
+            fetch(`/weather?city=${city}`)
+                .then(response => response.json())
+                .then(data => {
+                    // Update the UI with weather data
+                    if (data.city) {
+                        document.getElementById("current-city").textContent = data.city;
+                        document.getElementById("current-temp").textContent = `Temperature: ${data.temperature}°C`;
+                        document.getElementById("current-desc").textContent = "Weather: Sunny"; // Modify this for actual weather
+                        document.getElementById("current-wind").textContent = "Wind: 5 m/s"; // Modify for actual wind speed
+                    } else {
+                        alert(data.error || "City not found");
+                    }
+                })
+                .catch(error => {
+                    console.error('Error fetching weather data:', error);
+                    alert("An error occurred while fetching the weather data.");
+                });
+        });
+    </script>
 </body>
 
 </html>
