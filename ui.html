@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather Explorer</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Custom Styles -->
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <!-- Navbar -->
+    <nav class="navbar navbar-dark bg-primary">
+        <div class="container">
+            <a class="navbar-brand" href="#">Weather Explorer</a>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <header class="text-center py-5 bg-image">
+        <h1 class="display-4 text-white">Stay Updated with the Weather</h1>
+        <p class="lead text-white">Get accurate weather forecasts and insights for your city.</p>
+    </header>
+
+    <!-- Main Content -->
+    <div class="container my-5">
+        <!-- Weather Search -->
+        <div class="row mb-5">
+            <div class="col-md-6 mx-auto">
+                <h3 class="text-center">Search for a City</h3>
+                <form id="weather-form" class="input-group">
+                    <input type="text" id="city" class="form-control" placeholder="Enter city" required>
+                    <button type="submit" class="btn btn-primary">Search</button>
+                </form>
+            </div>
+        </div>
+
+        <!-- Current Weather -->
+        <div id="current-weather" class="row mb-5">
+            <h3 class="text-center">Current Weather</h3>
+            <div class="col-md-4 mx-auto">
+                <div class="card text-center shadow">
+                    <div class="card-body">
+                        <h5 class="card-title" id="current-city">City Name</h5>
+                        <p class="card-text" id="current-temp">Temperature: --°C</p>
+                        <p class="card-text" id="current-desc">Weather: --</p>
+                        <p class="card-text" id="current-wind">Wind: -- m/s</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Weekly Forecast -->
+        <div id="weekly-forecast" class="row text-center">
+            <h3>7-Day Forecast</h3>
+            <div class="col-md-2" id="day-1">
+                <div class="card shadow-sm">
+                    <div class="card-body">
+                        <h6>Monday</h6>
+                        <p>Sunny</p>
+                        <p>25°C</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-2" id="day-2">
+                <div class="card shadow-sm">
+                    <div class="card-body">
+                        <h6>Tuesday</h6>
+                        <p>Cloudy</p>
+                        <p>22°C</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-2" id="day-3">
+                <div class="card shadow-sm">
+                    <div class="card-body">
+                        <h6>Wednesday</h6>
+                        <p>Rainy</p>
+                        <p>20°C</p>
+                    </div>
+                </div>
+            </div>
+            <!-- Add similar cards for other days -->
+        </div>
+
+        <!-- Weather Highlights -->
+        <div id="weather-highlights" class="row mt-5">
+            <h3 class="text-center">Today's Highlights</h3>
+            <div class="col-md-4 text-center">
+                <div class="highlight-card p-3 shadow-sm">
+                    <h5>Humidity</h5>
+                    <p id="humidity">--%</p>
+                </div>
+            </div>
+            <div class="col-md-4 text-center">
+                <div class="highlight-card p-3 shadow-sm">
+                    <h5>Wind Speed</h5>
+                    <p id="wind-speed">-- m/s</p>
+                </div>
+            </div>
+            <div class="col-md-4 text-center">
+                <div class="highlight-card p-3 shadow-sm">
+                    <h5>Sunrise & Sunset</h5>
+                    <p id="sunrise">Sunrise: --</p>
+                    <p id="sunset">Sunset: --</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-primary text-white text-center py-3">
+        <p>&copy; 2024 Weather Explorer. Designed for demo purposes.</p>
+    </footer>
+
+    <!-- Custom JavaScript -->
+    <script src="app.js"></script>
+</body>
+
+</html>
